@@ -9,6 +9,7 @@ require('./bootstrap');
 import Vue from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
 import { createInertiaApp } from '@inertiajs/inertia-vue'
+import vuetify from './vuetify'
 var vueAwesomeCountdown = require('vue-awesome-countdown').default
 
 Vue.use(VueCompositionAPI)
@@ -18,6 +19,7 @@ createInertiaApp({
   resolve: name => require(`./Pages/${name}`),
   setup({ el, App, props }) {
     new Vue({
+      vuetify,
       render: h => h(App, props),
     }).$mount(el)
   },

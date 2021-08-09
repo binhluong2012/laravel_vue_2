@@ -1,5 +1,7 @@
 <template>
-    <div>
+<v-app>
+      <v-main>
+        <v-container>Hello world</v-container>
         <h1>{{ count }}</h1>
         <vac :end-time="new Date().getTime() + count * 1000">
             <span slot="process" slot-scope="{ timeObj }">
@@ -7,7 +9,8 @@
             </span>
             <span slot="finish">Done!</span>
         </vac>
-    </div>
+      </v-main>
+    </v-app>
 </template>
 <script>
 import { defineComponent, ref } from "@vue/composition-api";
